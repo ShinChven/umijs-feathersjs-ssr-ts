@@ -5,9 +5,11 @@
     "outDir": "./lib",
     "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": true
   },
   "exclude": [
-    "test"
+    "test",
+    "public",
   ]
 }

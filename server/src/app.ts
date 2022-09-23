@@ -36,7 +36,8 @@ try {
   // Skip loading favicon if it doesn't exist
   app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 } catch (e) {
-  console.error(e);
+  // console.error(e);
+  console.info('No favicon found');
 }
 // Host the public folder
 try {

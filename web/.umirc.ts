@@ -1,14 +1,15 @@
-import { defineConfig } from 'umi';
+import {defineConfig} from 'umi';
 
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
   routes: [
-    { path: '/', component: '@/pages/index' },
+    {path: '/', component: '@/pages/index'},
+    {path: '/posts/:id', component: '@/pages/posts'},
   ],
   fastRefresh: {},
-  ssr:{
+  ssr: {
     mode: 'string',
   },
 });

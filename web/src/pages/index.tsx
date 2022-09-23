@@ -15,7 +15,8 @@ const IndexPage: React.FC<WithSSRData<{ page?: IndexSSRData }>> & SSRComponent =
 
   return (
     <div>
-      <h1 className={styles.title}>Page index</h1>
+      <h1 className={styles.title}>{page?.title}</h1>
+      <p className={styles.title}>{page?.title}</p>
     </div>
   );
 }

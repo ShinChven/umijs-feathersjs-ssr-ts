@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {SSRComponent, WithSSRData} from '@/types';
 
-type Post = {
+type PostModel = {
   id: number;
   title: string;
   content: string;
 }
 
-const Post: React.FC<WithSSRData<{ post: Post }>> & SSRComponent = ({data}) => {
+const Post: React.FC<WithSSRData<{ post: PostModel }>> & SSRComponent = ({data}) => {
   const [post, setPost] = useState(data?.post); // initiate with SSR data
 
   useEffect(() => {
