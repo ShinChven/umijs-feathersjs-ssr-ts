@@ -9,6 +9,7 @@ export default defineConfig({
     {path: '/posts/:id', component: '@/pages/posts'},
   ],
   fastRefresh: {},
+  antd: false,
   ssr: {
     mode: 'string',
   },
