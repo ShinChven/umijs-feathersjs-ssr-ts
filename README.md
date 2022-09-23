@@ -1,6 +1,6 @@
 # Full Stack TypeScript Server Side Rendering with Umijs and FeathersJS
 
-> This is a full stack TypeScript Server-Side-Rendering with Umijs and FeathersJS.
+> This is a full stack TypeScript Server-Side-Rendering with React/UmiJS and FeathersJS.
 
 ## Server
 
