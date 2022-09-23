@@ -2,6 +2,17 @@
 
 > This is a full stack TypeScript Server-Side-Rendering with React/UmiJS and FeathersJS.
 
+## Quick Start
+
+```bash
+# Install dependencies and compile web frontend project.
+bash deploy-web.sh
+# Start web server.
+cd server && npm start
+```
+
+Open <a href='http://localhost:3030' target='_blank'>http://localhost:3030</a> in browser.
+
 ## Server
 
 ### Enable Allow JavaScript
