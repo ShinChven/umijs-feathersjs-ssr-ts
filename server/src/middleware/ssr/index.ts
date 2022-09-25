@@ -11,18 +11,18 @@ const SSRControllers: {
 } = {
   '/': IndexPageController,
   '/posts/:id': PostsController,
-}
+};
 
 /**
  * Find Server Side Rendering data controller
- * @param url request url
+ * @param pathname request url
  */
-const getSSRController = (url: string): { route?: string, controller?: SSRController<any> } => {
+const getSSRController = (pathname: string): { route?: string, controller?: SSRController<any> } => {
   const routes = Object.keys(SSRControllers);
   for (let i = 0; i < routes.length; i++) {
     const route = routes[i];
     const regexp = pathToRegexp(route);
-    if (regexp.test(url)) {
+    if (regexp.test(pathname)) {
       return {
         route,
         controller: SSRControllers[route]
@@ -34,7 +34,8 @@ const getSSRController = (url: string): { route?: string, controller?: SSRContro
 
 export default () => {
   return async (req: Request, res: Response, next: NextFunction) => {
-    const {route, controller} = getSSRController(req.url);
+    const pathname = req.url.split('?')[0];
+    const {route, controller} = getSSRController(pathname);
 
     if (route === undefined || controller === undefined) {
       next();
@@ -75,5 +76,5 @@ export default () => {
       console.error(e);
     }
     next();
-  }
-}
+  };
+};

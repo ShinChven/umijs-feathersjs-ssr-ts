@@ -26,7 +26,7 @@ const PostsController = async (req: Request) => {
   // @ts-ignore
   const id = regexpResults[1];
   return {post: Posts[id]};
-}
+};
 
 export default PostsController;
 
