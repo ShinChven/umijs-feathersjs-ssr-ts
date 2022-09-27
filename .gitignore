@@ -1,5 +1,6 @@
 output/
 lib/
+~$*
 
 test/config.json
 

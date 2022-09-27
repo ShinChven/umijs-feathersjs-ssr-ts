@@ -13,6 +13,12 @@ cd server && npm start
 
 Open <a href='http://localhost:3030' target='_blank'>http://localhost:3030</a> in browser.
 
+## How Does It Work?
+
+1. Enter url to visit your site in browser, the browser will send a request to the server to get a Server Side Rendered page.
+
+
+
 ## Server
 
 ### Enable Allow JavaScript
