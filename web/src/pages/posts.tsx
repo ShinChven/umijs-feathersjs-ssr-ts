@@ -10,7 +10,7 @@ type PostModel = {
 }
 
 const Post: React.FC<WithSSRData<{ post: PostModel }>> & SSRComponent = ({data}) => {
-  const [post, setPost] = useState(data?.post); // initiate with SSR data
+  const [post, setPost] = useState(data?.post); // Initiate with SSR data
 
   useEffect(() => {
     // Fetch data over api if SSR data is not given.
