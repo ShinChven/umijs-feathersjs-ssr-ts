@@ -15,8 +15,11 @@ Open <a href='http://localhost:3030' target='_blank'>http://localhost:3030</a> i
 
 ## How Does It Work?
 
-1. Enter url to visit your site in browser, the browser will send a request to the server to get a Server Side Rendered page.
+![architecture](assets/architecture.png)
 
+1. Server Side Rendering middleware renders `static html page` with `data controllers`.
+2. Browser loads the `static html page`, and run [hydration script](https://reactjs.org/docs/react-dom.html#hydrate) to swap the `root div` with a React web application after the `static page` is loaded.
+3. React web application `navigates` and `renders` pages from client side, and fetches data from API that shares the same `data controller` with `server side rendering middleware`.
 
 
 ## Server
