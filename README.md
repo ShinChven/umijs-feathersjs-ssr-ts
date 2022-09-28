@@ -37,7 +37,7 @@ export default defineConfig({
 });
 ```
 
-### Add SSR Data Handler To Your React Component
+### Write A Page Component That Supports SSR
 
 To enable SSR for a React component, you need to add a `getInitialProps` function to your component. This function will
 be called by the SSR middleware while rendering the static html page.
