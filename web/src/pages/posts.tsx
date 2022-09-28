@@ -10,12 +10,14 @@ type PostModel = {
 }
 
 const Post: React.FC<WithSSRData<{ post: PostModel }>> & SSRComponent = ({data}) => {
-  const [post, setPost] = useState(data?.post); // Initiate with SSR data
-
+  // Initiate Page Data:
+  // If the page is rendered from server side, the state will be initiated with SSR data
+  // If the page is rendered from client side, the state will be initiated as undefined, you may fetch data from API in useEffect hook.
+  // By doing this, no matter the page is rendered from server side or client side, the component refers to the same state.
+  const [post, setPost] = useState(data?.post);
   useEffect(() => {
     // Fetch data over api if SSR data is not given.
     // In most case, this page may have been loaded by client router
-
     if (!post) {
       (async () => {
         const id = window.location.pathname.split('/').pop();
@@ -24,8 +26,7 @@ const Post: React.FC<WithSSRData<{ post: PostModel }>> & SSRComponent = ({data})
         setPost(data?.post);
       })()
     }
-
-  }, [0]);
+  }, [0]); // run only once
 
   return (
     <div>
@@ -39,8 +40,9 @@ const Post: React.FC<WithSSRData<{ post: PostModel }>> & SSRComponent = ({data})
 
 
 /**
- * Process and bind data from server side render
- * @param ctx
+ * Bind SSR data to component
+ * @param ctx - Context object from server side rendering that carries initial data.
+ * I suggest you keep this function as it is, and handle data in component, for this function is only called in server side.
  */
 Post.getInitialProps = async (ctx) => {
   return Promise.resolve({
