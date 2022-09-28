@@ -27,7 +27,7 @@ Open <a href='http://localhost:3030' target='_blank'>http://localhost:3030</a> i
 
 ### Enable SSR in UmiJS
 
-The frontend project is located in `web` folder. It is a [UmiJS 3](https://v3.umijs.org/) project which provides out of
+The frontend project is located in `web` folder. It is an [UmiJS 3](https://v3.umijs.org/) project which provides out of
 box SSR solution. All you need to do to enable SSR in an UmiJS project is to add `ssr: {}` in config file.
 
 ```typescript
