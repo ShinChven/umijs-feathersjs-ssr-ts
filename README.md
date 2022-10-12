@@ -6,7 +6,7 @@
 
 ```bash
 # Install dependencies and compile web frontend project.
-bash build.sh
+./build.sh # or bash build.sh
 # Start web server.
 cd server && npm start
 ```
